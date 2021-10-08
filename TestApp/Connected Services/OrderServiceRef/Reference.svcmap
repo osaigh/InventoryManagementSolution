@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="5077ba4e-61a2-4473-bf83-494262ed43f0" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8733/InventorySystem/OrderService/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Microsoft.ServiceModel.Samples.wsdl" MetadataType="Wsdl" ID="4d17dced-0dc6-4133-a2a4-12caa5ea3984" SourceId="1" SourceUrl="http://localhost:8733/InventorySystem/OrderService/mex" />
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="dbc7dc74-40a4-433f-a7ab-0225313a2bc8" SourceId="1" SourceUrl="http://localhost:8733/InventorySystem/OrderService/mex" />
+    <MetadataFile FileName="Microsoft.ServiceModel.Samples.xsd" MetadataType="Schema" ID="3a307dcb-78c1-4814-976f-357e9c748865" SourceId="1" SourceUrl="http://localhost:8733/InventorySystem/OrderService/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="512aef1f-b317-42ca-8639-d5ec98fc00ce" SourceId="1" SourceUrl="http://localhost:8733/InventorySystem/OrderService/mex" />
+    <MetadataFile FileName="InventoryServiceLibrary.xsd" MetadataType="Schema" ID="0b70be24-9291-4bfc-8155-20e4a21ba264" SourceId="1" SourceUrl="http://localhost:8733/InventorySystem/OrderService/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

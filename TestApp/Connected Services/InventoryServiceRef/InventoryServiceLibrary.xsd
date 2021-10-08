@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/InventoryServiceLibrary" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/InventoryServiceLibrary" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ProductCatalog">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ProductsCatalogItems" nillable="true" type="tns:ArrayOfProductCatalogItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProductCatalog" nillable="true" type="tns:ProductCatalog" />
+  <xs:complexType name="ArrayOfProductCatalogItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ProductCatalogItem" nillable="true" type="tns:ProductCatalogItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProductCatalogItem" nillable="true" type="tns:ArrayOfProductCatalogItem" />
+  <xs:complexType name="ProductCatalogItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Product" nillable="true" type="tns:Product" />
+      <xs:element minOccurs="0" name="Quantity" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProductCatalogItem" nillable="true" type="tns:ProductCatalogItem" />
+  <xs:complexType name="Product">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UnitPrice" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Product" nillable="true" type="tns:Product" />
+</xs:schema>

@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://Microsoft.ServiceModel.Samples" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://Microsoft.ServiceModel.Samples" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://Microsoft.ServiceModel.Samples/Imports">
+      <xsd:import namespace="http://Microsoft.ServiceModel.Samples" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/InventoryServiceLibrary" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IInventoryService_GetProductCatalog_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductCatalog" />
+  </wsdl:message>
+  <wsdl:message name="IInventoryService_GetProductCatalog_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductCatalogResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInventoryService_SubscribeToProductQuantityChanged_InputMessage">
+    <wsdl:part name="parameters" element="tns:SubscribeToProductQuantityChanged" />
+  </wsdl:message>
+  <wsdl:message name="IInventoryService_SubscribeToProductQuantityChanged_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SubscribeToProductQuantityChangedResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInventoryService_UnsubscribeToProductQuantityChanged_InputMessage">
+    <wsdl:part name="parameters" element="tns:UnsubscribeToProductQuantityChanged" />
+  </wsdl:message>
+  <wsdl:message name="IInventoryService_UnsubscribeToProductQuantityChanged_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UnsubscribeToProductQuantityChangedResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInventoryService_ProductQuantityChanged_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:ProductQuantityChanged" />
+  </wsdl:message>
+  <wsdl:portType msc:usingSession="true" name="IInventoryService">
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetProductCatalog">
+      <wsdl:input wsaw:Action="http://Microsoft.ServiceModel.Samples/IInventoryService/GetProductCatalog" message="tns:IInventoryService_GetProductCatalog_InputMessage" />
+      <wsdl:output wsaw:Action="http://Microsoft.ServiceModel.Samples/IInventoryService/GetProductCatalogResponse" message="tns:IInventoryService_GetProductCatalog_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="SubscribeToProductQuantityChanged">
+      <wsdl:input wsaw:Action="http://Microsoft.ServiceModel.Samples/IInventoryService/SubscribeToProductQuantityChanged" message="tns:IInventoryService_SubscribeToProductQuantityChanged_InputMessage" />
+      <wsdl:output wsaw:Action="http://Microsoft.ServiceModel.Samples/IInventoryService/SubscribeToProductQuantityChangedResponse" message="tns:IInventoryService_SubscribeToProductQuantityChanged_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="true" name="UnsubscribeToProductQuantityChanged">
+      <wsdl:input wsaw:Action="http://Microsoft.ServiceModel.Samples/IInventoryService/UnsubscribeToProductQuantityChanged" message="tns:IInventoryService_UnsubscribeToProductQuantityChanged_InputMessage" />
+      <wsdl:output wsaw:Action="http://Microsoft.ServiceModel.Samples/IInventoryService/UnsubscribeToProductQuantityChangedResponse" message="tns:IInventoryService_UnsubscribeToProductQuantityChanged_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="ProductQuantityChanged">
+      <wsdl:output wsaw:Action="http://Microsoft.ServiceModel.Samples/IInventoryService/ProductQuantityChanged" message="tns:IInventoryService_ProductQuantityChanged_OutputCallbackMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

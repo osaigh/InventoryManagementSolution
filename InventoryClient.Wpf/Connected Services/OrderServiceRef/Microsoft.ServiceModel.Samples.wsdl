@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://Microsoft.ServiceModel.Samples" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://Microsoft.ServiceModel.Samples" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://Microsoft.ServiceModel.Samples/Imports">
+      <xsd:import namespace="http://Microsoft.ServiceModel.Samples" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/InventoryServiceLibrary" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IOrderService_CreateOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateOrder" />
+  </wsdl:message>
+  <wsdl:message name="IOrderService_CreateOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOrderService_DeleteOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteOrder" />
+  </wsdl:message>
+  <wsdl:message name="IOrderService_DeleteOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOrderService_AddProductQuantityToOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddProductQuantityToOrder" />
+  </wsdl:message>
+  <wsdl:message name="IOrderService_AddProductQuantityToOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddProductQuantityToOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOrderService_RemoveProductFromOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveProductFromOrder" />
+  </wsdl:message>
+  <wsdl:message name="IOrderService_RemoveProductFromOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveProductFromOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOrderService_SaveOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveOrder" />
+  </wsdl:message>
+  <wsdl:message name="IOrderService_SaveOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveOrderResponse" />
+  </wsdl:message>
+  <wsdl:portType msc:usingSession="true" name="IOrderService">
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="CreateOrder">
+      <wsdl:input wsaw:Action="http://Microsoft.ServiceModel.Samples/IOrderService/CreateOrder" message="tns:IOrderService_CreateOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://Microsoft.ServiceModel.Samples/IOrderService/CreateOrderResponse" message="tns:IOrderService_CreateOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="DeleteOrder">
+      <wsdl:input wsaw:Action="http://Microsoft.ServiceModel.Samples/IOrderService/DeleteOrder" message="tns:IOrderService_DeleteOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://Microsoft.ServiceModel.Samples/IOrderService/DeleteOrderResponse" message="tns:IOrderService_DeleteOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="AddProductQuantityToOrder">
+      <wsdl:input wsaw:Action="http://Microsoft.ServiceModel.Samples/IOrderService/AddProductQuantityToOrder" message="tns:IOrderService_AddProductQuantityToOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://Microsoft.ServiceModel.Samples/IOrderService/AddProductQuantityToOrderResponse" message="tns:IOrderService_AddProductQuantityToOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="RemoveProductFromOrder">
+      <wsdl:input wsaw:Action="http://Microsoft.ServiceModel.Samples/IOrderService/RemoveProductFromOrder" message="tns:IOrderService_RemoveProductFromOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://Microsoft.ServiceModel.Samples/IOrderService/RemoveProductFromOrderResponse" message="tns:IOrderService_RemoveProductFromOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="SaveOrder">
+      <wsdl:input wsaw:Action="http://Microsoft.ServiceModel.Samples/IOrderService/SaveOrder" message="tns:IOrderService_SaveOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://Microsoft.ServiceModel.Samples/IOrderService/SaveOrderResponse" message="tns:IOrderService_SaveOrder_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

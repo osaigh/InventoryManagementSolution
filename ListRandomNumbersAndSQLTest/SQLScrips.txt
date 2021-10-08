@@ -1,0 +1,53 @@
+﻿CREATE TYPE dbo.TableOne As TABLE(
+	Id INT NOT NULL PRIMARY KEY,
+	Values1 INT NOT NULL,
+	Values2 INT NULL
+);
+
+CREATE TYPE dbo.TableTwo As TABLE(
+	Id INT NOT NULL PRIMARY KEY,
+	Values1 INT NOT NULL,
+	Values2 INT NULL
+);
+
+CREATE FUNCTION Comparetables(@tableone dbo.TableOne READONLY, @tabletwo dbo.TableTwo READONLY)
+RETURNS BIT
+AS
+BEGIN
+	DECLARE @tableonerowcount as INT
+	DECLARE @tabletworowcount as INT
+	DECLARE @diff as INT
+	SET @tableonerowcount = (SELECT COUNT(*) FROM @tableone)
+	SET @tabletworowcount = (SELECT COUNT(*) FROM @tabletwo)
+
+	IF @tableonerowcount = @tabletworowcount
+		BEGIN
+			SET @diff =(SELECT COUNT(*) FROM (SELECT * FROM @tableone EXCEPT SELECT * FROM @tabletwo) res)
+			
+			IF @diff > 0
+				RETURN 1
+			ELSE 
+				RETURN 0
+		END
+	IF @tableonerowcount < @tabletworowcount
+		BEGIN
+			SET @diff = (SELECT COUNT(*) FROM (SELECT * FROM @tableone EXCEPT SELECT * FROM @tabletwo) res)
+			
+			IF @diff > 0
+				RETURN 1
+			ELSE 
+				RETURN 0
+		END
+	IF @tableonerowcount > @tabletworowcount
+		BEGIN
+			SET @diff = (SELECT COUNT(*) FROM (SELECT * FROM @tabletwo EXCEPT SELECT * FROM @tableone) res)
+			
+			IF @diff > 0
+				RETURN 1
+			ELSE 
+				RETURN 0
+		END
+	RETURN 0
+END
+
+GO
