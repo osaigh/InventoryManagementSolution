@@ -4,7 +4,7 @@ Inventory system
 
 ## Description
 
-A project demonstrating various WCF integration with WPF. The WPF project was implemented in an MVVM manner using Prism library. AdonisUI was used for theming and Polly was used for retries on the client end when connecting to the server.
+A project demonstrating WCF integration with WPF. The WPF project was implemented in an MVVM manner using Prism library. AdonisUI was used for theming and Polly was used for retries on the client end when connecting to the server.
 
 ## List of projects
 
